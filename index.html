@@ -66,9 +66,9 @@
     .intro p{color:var(--muted);margin-bottom:20px}
 
     .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:#07202a;padding:10px 18px;border-radius:999px;font-weight:700;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
-    .btn:hover{background:#4addbb;transform:translateY(-2px)}
-    .btn-outline{border:1.5px solid rgba(100,255,218,0.25);color:var(--accent);padding:10px 18px;border-radius:999px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+    .btn{background:var(--accent);color:#07202a;padding:10px 18px;border-radius:999px;font-weight:700;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s ease}
+    .btn:hover{background:#4addbb;transform:translateY(-2px);box-shadow:0 8px 24px rgba(100,255,218,0.2)}
+    .btn-outline{border:1.5px solid rgba(100,255,218,0.25);color:var(--accent);padding:10px 18px;border-radius:999px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s ease}
     .btn-outline:hover{background:var(--glass);border-color:rgba(100,255,218,0.5)}
 
     .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:16px}
@@ -101,6 +101,42 @@
     .social-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:rgba(100,255,218,0.1);color:var(--accent);transition:all 0.3s ease;border:1px solid rgba(100,255,218,0.2)}
     .social-icon:hover{background:rgba(100,255,218,0.2);transform:translateY(-2px)}
     .social-icon i{font-size:1.2rem}
+
+    /* About Section Professional Design */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about-image{display:flex;justify-content:center}
+    .profile-image{width:100%;max-width:380px;border-radius:16px;border:2px solid rgba(100,255,218,0.2);overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,0.3);transition:all 0.3s ease}
+    .profile-image:hover{border-color:rgba(100,255,218,0.5);box-shadow:0 32px 64px rgba(100,255,218,0.15)}
+    .profile-image img{width:100%;height:auto;display:block}
+
+    .about-content h2{font-size:1.8rem;color:#fff;margin:0 0 16px;font-weight:700}
+    .about-content > p{color:var(--muted);margin-bottom:16px;line-height:1.8;font-size:1rem}
+
+    .about-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0}
+    .highlight-item{background:rgba(100,255,218,0.05);border-left:3px solid var(--accent);padding:16px;border-radius:8px;transition:all 0.3s ease}
+    .highlight-item:hover{background:rgba(100,255,218,0.1);transform:translateX(4px)}
+    .highlight-item strong{color:var(--accent);font-weight:700}
+    .highlight-item p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+
+    /* Services Section */
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .service-card{background:linear-gradient(135deg, rgba(100,255,218,0.08) 0%, rgba(100,255,218,0.02) 100%);padding:32px;border-radius:12px;border:1px solid rgba(100,255,218,0.15);transition:all 0.3s ease;position:relative;overflow:hidden}
+    .service-card::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:radial-gradient(circle, rgba(100,255,218,0.1) 0%, transparent 70%);border-radius:50%}
+    .service-card:hover{transform:translateY(-8px);border-color:rgba(100,255,218,0.3);background:linear-gradient(135deg, rgba(100,255,218,0.12) 0%, rgba(100,255,218,0.04) 100%);box-shadow:0 20px 40px rgba(100,255,218,0.1)}
+    .service-card-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:rgba(100,255,218,0.15);border-radius:10px;color:var(--accent);font-size:1.8rem;margin-bottom:16px}
+    .service-card h3{color:#fff;font-size:1.3rem;margin:0 0 12px;font-weight:700}
+    .service-card p{color:var(--muted);line-height:1.7;margin-bottom:12px}
+    .service-features{list-style:none;padding:0;margin:16px 0 0}
+    .service-features li{color:var(--muted);font-size:0.95rem;padding:6px 0;display:flex;gap:8px}
+    .service-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+    @media (max-width:900px){
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .about-image{order:1}
+      .about-content{order:2}
+      .services-grid{grid-template-columns:1fr}
+      .about-highlights{grid-template-columns:1fr}
+    }
 
     /* Footer Redesign */
     footer{
@@ -219,6 +255,7 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#publications">Publications</a></li>
@@ -262,41 +299,94 @@
       </div>
     </section>
 
+    <!-- Professional About Section -->
     <section id="about">
-  <div class="container">
+      <div class="container">
+        <span class="section-title">About Me</span>
+        
+        <div class="about-grid">
+          <div class="about-image">
+            <div class="profile-image">
+              <img src="/headshot.svg" alt="Awais Qureshi - Applied AI Scientist">
+            </div>
+          </div>
 
-    <span class="section-title">About</span>
+          <div class="about-content">
+            <h2>Applied AI Scientist & Researcher</h2>
+            
+            <p>
+              I am an Applied AI Scientist and PhD Candidate at NUST-SEECS, working at the intersection of Artificial Intelligence, Healthcare, and Computational Biology. With 14+ years in software engineering and technical leadership, I bring a unique blend of research rigor and engineering excellence.
+            </p>
 
-    <div class="card">
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <strong><i class="fas fa-flask"></i> Research Focus</strong>
+                <p>Interpretable deep learning frameworks for microbiome analysis and disease prediction</p>
+              </div>
+              <div class="highlight-item">
+                <strong><i class="fas fa-code"></i> Tech Stack</strong>
+                <p>Python, TensorFlow, PyTorch, LLMs, Cloud Computing, Enterprise Systems</p>
+              </div>
+              <div class="highlight-item">
+                <strong><i class="fas fa-microscope"></i> Expertise</strong>
+                <p>Healthcare AI, XAI, Time-Series Modeling, Generative AI, LLMOps</p>
+              </div>
+              <div class="highlight-item">
+                <strong><i class="fas fa-chart-line"></i> Impact</strong>
+                <p>514K+ microbiome observations analyzed, 1,871 patients modeled, 6 publications</p>
+              </div>
+            </div>
 
-      <p>
-        I am an Applied AI Scientist and PhD Candidate at NUST-SEECS, working at the intersection of Artificial Intelligence, Healthcare, and Computational Biology.
-      </p>
+            <p style="margin-top:24px;color:var(--muted)">
+              My current interests span Healthcare AI, Computational Biology, Generative AI, AI Agents, Longitudinal Time-Series Modeling, Explainable AI (XAI), and LLMOps. I'm passionate about developing scalable, interpretable AI solutions that advance clinical medicine and accelerate biomedical discovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <br>
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <span class="section-title">Professional Services</span>
+        
+        <div class="services-grid">
+          <!-- Software & GenAI Architecture -->
+          <div class="service-card">
+            <div class="service-card-icon">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3>Software & GenAI Architecture</h3>
+            <p>Expert consulting and design for AI-powered applications, from concept to production deployment.</p>
+            <ul class="service-features">
+              <li>AI System Architecture & Design</li>
+              <li>LLM Integration & Optimization</li>
+              <li>RAG Pipeline Development</li>
+              <li>Model Deployment & MLOps</li>
+              <li>Performance Optimization</li>
+              <li>Technical Due Diligence</li>
+            </ul>
+          </div>
 
-      <p>
-        My research focuses on developing interpretable deep-learning frameworks for longitudinal microbiome analysis, disease prediction, and healthcare decision support systems. Leveraging large-scale clinical datasets and advanced explainability techniques, I aim to make AI actionable for clinicians.
-      </p>
-
-      <br>
-
-      <p>
-        Beyond research, I bring more than 14 years of experience in software engineering, technical leadership, cloud computing, and enterprise systems development. This unique blend of research rigor and engineering excellence enables me to bridge the gap between theory and practice.
-      </p>
-
-      <br>
-
-      <p>
-        My current interests include Healthcare AI, Computational Biology, Generative AI, AI Agents, Longitudinal Time-Series Modeling, Explainable AI (XAI), and LLMOps. My long-term vision is to develop scalable, interpretable AI solutions that advance clinical medicine and accelerate biomedical discovery.
-      </p>
-<p style="margin-top:12px;color:var(--muted)">
-I am always interested in meaningful collaborations, research partnerships, and opportunities at the intersection of Artificial Intelligence, Healthcare, and Computational Biology.
-</p>
-    </div>
-
-  </div>
-</section>
+          <!-- Research & Academic Services -->
+          <div class="service-card">
+            <div class="service-card-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3>Research & Academic Services</h3>
+            <p>Comprehensive research guidance, thesis support, and academic mentorship for students and researchers.</p>
+            <ul class="service-features">
+              <li>Thesis Supervision & Guidance</li>
+              <li>Research Methodology Design</li>
+              <li>Paper Writing & Editing</li>
+              <li>Literature Review Support</li>
+              <li>Statistical Analysis Guidance</li>
+              <li>Publication Strategy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="research">
       <div class="container">
@@ -461,10 +551,6 @@ I am always interested in meaningful collaborations, research partnerships, and 
       </div>
     </div>
   </footer>
-
-  <script>
-    // No mailto obfuscation needed - removed
-  </script>
 
 </body>
 
