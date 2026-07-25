@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mr. Awais Qureshi | Applied AI Scientist</title>
+<title>Awais Qureshi | Applied AI Scientist</title>
+
+300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,11 +18,15 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Inter',sans-serif;
 background:#0a192f;
 color:white;
-line-height:1.6;
+line-height:1.7;
 }
 
 .container{
@@ -34,12 +42,13 @@ align-items:center;
 justify-content:center;
 text-align:center;
 background:linear-gradient(135deg,#0a192f,#112240);
+padding:20px;
 }
 
 .hero h1{
 font-size:4rem;
 font-weight:800;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .hero h2{
@@ -48,72 +57,81 @@ margin-bottom:20px;
 }
 
 .hero p{
-max-width:800px;
+max-width:850px;
 margin:auto;
-font-size:1.2rem;
+font-size:1.15rem;
 }
 
 .btn{
 display:inline-block;
-padding:12px 30px;
 background:#64ffda;
 color:#0a192f;
-font-weight:bold;
-margin-top:30px;
-text-decoration:none;
+padding:12px 28px;
 border-radius:30px;
+font-weight:700;
+text-decoration:none;
+margin-top:30px;
+margin-right:10px;
+}
+
+.btn-outline{
+display:inline-block;
+border:2px solid #64ffda;
+color:#64ffda;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+margin-top:30px;
 }
 
 section{
-padding:100px 0;
+padding:90px 0;
 }
 
 .section-title{
 font-size:2.5rem;
+text-align:center;
 margin-bottom:50px;
 color:#64ffda;
-text-align:center;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
 }
 
 .card{
 background:#112240;
 padding:25px;
-border-radius:15px;
-transition:.3s;
+border-radius:16px;
+transition:0.3s;
+border:1px solid rgba(100,255,218,.15);
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
+border-color:#64ffda;
+box-shadow:0 10px 25px rgba(100,255,218,.15);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-text-align:center;
 }
 
 .stat{
 background:#112240;
 padding:30px;
-border-radius:15px;
+border-radius:16px;
+text-align:center;
 }
 
 .stat h3{
-color:#64ffda;
 font-size:2rem;
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:#081221;
+color:#64ffda;
+margin-bottom:10px;
 }
 
 a{
@@ -121,49 +139,111 @@ color:#64ffda;
 text-decoration:none;
 }
 
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.contact-card{
+background:#112240;
+padding:25px;
+border-radius:16px;
+text-align:center;
+transition:.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-8px);
+border:1px solid #64ffda;
+}
+
+.contact-card h3{
+margin-bottom:10px;
+color:#64ffda;
+}
+
+.contact-card a{
+display:inline-block;
+margin-top:10px;
+font-weight:600;
+}
+
+footer{
+background:#081221;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero h2{
+font-size:1.2rem;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <section class="hero">
+
 <div class="container">
 
 <h1>Awais Qureshi</h1>
 
 <h2>
-Applied AI Scientist | Healthcare AI |
-Computational Biology | GenAI
+Applied AI Scientist | Healthcare AI | Computational Biology
 </h2>
 
 <p>
-Building trustworthy AI systems for healthcare,
-genomics, scientific discovery and next-generation
-clinical decision support.
+Building trustworthy AI systems for healthcare, genomics,
+scientific discovery, and next-generation clinical decision support.
+Leveraging Deep Learning, Explainable AI, Longitudinal Microbiome Analysis,
+Generative AI, and LLMOps to transform research into real-world impact.
 </p>
 
-https://github.com/YOUR_USERNAME
+" class="btn">Let's Connect</a>
+.pdf" class="btn-outline">Download CV</a>
 
 </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
 <h2 class="section-title">About Me</h2>
 
-<p style="font-size:1.1rem;text-align:center;max-width:900px;margin:auto;">
-I am a PhD Candidate at NUST-SEECS specializing in
-Deep Learning, Explainable AI, Computational Biology,
-Longitudinal Microbiome Analytics and Generative AI.
+<div class="card">
 
-With 14+ years of experience spanning Software
-Engineering, Research, Technical Leadership and AI,
-I bridge the gap between scientific innovation and
-production-ready intelligent systems.
+<p>
+I am a PhD Candidate at NUST-SEECS specializing in Deep Learning,
+Longitudinal Microbiome Analytics, Explainable AI, Computational Biology,
+Healthcare AI, and Generative AI.
+</p>
+
+<br>
+
+<p>
+With 14+ years of experience in Software Engineering,
+Technical Leadership, Artificial Intelligence, and Research,
+I bridge the gap between academic innovation and production-ready AI systems.
 </p>
 
 </div>
+
+</div>
+
 </section>
 
 <section>
@@ -211,24 +291,21 @@ production-ready intelligent systems.
 <div class="card">
 <h3>DynaBiome</h3>
 <p>
-Interpretable temporal deep learning framework
-for longitudinal microbiome dysbiosis detection.
+Interpretable temporal deep-learning framework for longitudinal microbiome dysbiosis detection using LSTMs and Transformers.
 </p>
 </div>
 
 <div class="card">
 <h3>MetaResNet</h3>
 <p>
-CNN-based disease classification using optimized
-colormap representations of sparse metagenomic data.
+Novel CNN architecture for disease classification using metagenomic colormap optimization.
 </p>
 </div>
 
 <div class="card">
 <h3>DynaBiomeX</h3>
 <p>
-Noise filtration framework for sparse longitudinal
-microbiome datasets using deep learning.
+Noise filtration framework for sparse longitudinal microbiome datasets using advanced deep-learning strategies.
 </p>
 </div>
 
@@ -249,26 +326,21 @@ microbiome datasets using deep learning.
 <div class="card">
 <h3>Artificial Intelligence</h3>
 <p>
-Deep Learning, Transformers,
-CNNs, LSTMs, XAI
+Machine Learning, Deep Learning, CNNs, LSTMs, Transformers, Explainable AI
 </p>
 </div>
 
 <div class="card">
 <h3>Generative AI</h3>
 <p>
-LangChain, RAG,
-AI Agents, Bedrock,
-Prompt Engineering
+RAG, LangChain, AI Agents, Bedrock, Prompt Engineering, LLMOps
 </p>
 </div>
 
 <div class="card">
 <h3>Computational Biology</h3>
 <p>
-Microbiome Analytics,
-Genomics,
-Healthcare AI
+Microbiome Analytics, Healthcare AI, Genomics, Longitudinal Data Science
 </p>
 </div>
 
@@ -286,29 +358,18 @@ Healthcare AI
 
 <div class="card">
 
-<p>
-✅ DynaBiome (Published)
-</p>
+<p>✅ DynaBiome — Published Journal Article</p>
+<br>
 
-<p>
-📝 MetaResNet (Under Review)
-</p>
+<p>📝 MetaResNet — Under Review</p>
 
-<p>
-📝 DynaBiomeX (Under Review)
-</p>
+<p>📝 DynaBiomeX — Under Review</p>
 
-<p>
-📝 ICDM 2026 Submission
-</p>
+<p>📝 ICDM 2026 — Under Review</p>
 
-<p>
-📝 ICoDT 2026 Submission
-</p>
+<p>📝 ICoDT 2026 — Under Review</p>
 
-<p>
-📝 FiT 2026 In Preparation
-</p>
+<p>📝 FiT 2026 — In Preparation</p>
 
 </div>
 
@@ -316,47 +377,64 @@ Healthcare AI
 
 </section>
 
-<section>
+<section id="contact">
 
 <div class="container">
 
-<h2 class="section-title">Connect</h2>
+<h2 class="section-title">Let's Connect</h2>
 
-<div class="card">
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>💻 GitHub</h3>
+<p>Research repositories and open-source projects</p>
+ITHUB_USERNAME" target="_blank">
+Visit GitHub →
+</a>
+</div>
+
+<div class="contact-card">
+<h3>💼 LinkedIn</h3>
+<p>Professional profile and networking</p>
+linkedin.com/in/awaisqureshi-97150633" target="_blank">
+View LinkedIn →
+</a>
+</div>
+
+<div class="contact-card">
+<h3>📚 Google Scholar</h3>
+<p>Research publications and citations</p>
+<a href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank">
+Scholar Profile →
+</a>
+</div>
+
+<div class="contact-card">
+<h3>🆔 ORCID</h3>
+<p>Research identity and scholarly record</p>
+-7460-3099" target="_blank">
+View ORCID →
+</a>
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:50px;">
+
+<h3>Contact Me</h3>
+
+<br>
 
 <p>
-💻 GitHub:
-OUR_USERNAME">
-github.com/YOUR_USERNAME
+📧
+<a href="mailto:theawaisqureshi@gmail.com">
+theawaisqureshi@gmail.com
 </a>
 </p>
 
 <br>
 
-<p>
-💼 LinkedIn:
-qureshi-97150633">
-linkedin.com/in/awaisqureshi-97150633
-</a>
-</p>
-
-<br>
-
-<p>
-📚 Google Scholar:
-https://scholar.google.com/citations?user=HzfFC8kAAAAJ
-Scholar Profile
-</a>
-</p>
-
-<br>
-
-<p>
-🆔 ORCID:
--0001-7460-3099">
-0000-0001-7460-3099
-</a>
-</p>
+Applied_Scientist_CV.pdf
 
 </div>
 
@@ -367,11 +445,11 @@ Scholar Profile
 <footer>
 
 <p>
-© 2026 Awais Qureshi |
-Applied AI Scientist
+© 2026 Awais Qureshi | Applied AI Scientist
 </p>
 
 </footer>
 
 </body>
+
 </html>
