@@ -36,7 +36,12 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
     }
+
+    main{flex:1}
 
     a{color:var(--accent); text-decoration:none}
     a:focus{outline:2px dashed var(--accent); outline-offset:4px}
@@ -91,16 +96,115 @@
     .pub-list a{display:inline-flex;gap:8px;align-items:center}
 
     .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .social-icons{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    
+    .social-icons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
     .social-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:rgba(100,255,218,0.1);color:var(--accent);transition:all 0.3s ease;border:1px solid rgba(100,255,218,0.2)}
     .social-icon:hover{background:rgba(100,255,218,0.2);transform:translateY(-2px)}
     .social-icon i{font-size:1.2rem}
 
-    footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+    /* Footer Redesign */
+    footer{
+      background:linear-gradient(180deg, rgba(15,39,64,0.5), rgba(10,25,47,0.8));
+      border-top:1px solid rgba(100,255,218,0.1);
+      margin-top:auto;
+      padding:48px 0 32px;
+    }
 
-    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    form label{font-size:0.9rem;color:var(--muted);display:block;margin-bottom:6px}
-    form button{margin-top:8px}
+    .footer-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+
+    .footer-section h4{
+      color:var(--accent);
+      font-size:0.95rem;
+      font-weight:700;
+      margin:0 0 12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .footer-section p{
+      color:var(--muted);
+      font-size:0.9rem;
+      margin:0 0 8px;
+      line-height:1.6;
+    }
+
+    .footer-section a{
+      color:var(--muted);
+      text-decoration:none;
+      transition:color 0.3s ease;
+      display:block;
+      margin-bottom:6px;
+      font-size:0.9rem;
+    }
+
+    .footer-section a:hover{
+      color:var(--accent);
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .footer-divider{
+      border-top:1px solid rgba(100,255,218,0.1);
+      padding-top:24px;
+      margin-top:24px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:24px;
+      border-top:1px solid rgba(100,255,218,0.1);
+    }
+
+    .footer-copyright{
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    .footer-social{
+      display:flex;
+      gap:12px;
+    }
+
+    .footer-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:36px;
+      height:36px;
+      border-radius:6px;
+      background:rgba(100,255,218,0.05);
+      color:var(--muted);
+      transition:all 0.3s ease;
+      border:1px solid rgba(100,255,218,0.1);
+    }
+
+    .footer-social a:hover{
+      background:rgba(100,255,218,0.15);
+      color:var(--accent);
+      border-color:rgba(100,255,218,0.3);
+    }
+
+    @media (max-width:768px){
+      .footer-bottom{
+        flex-direction:column;
+        gap:16px;
+        text-align:center;
+      }
+      .social-icons{
+        justify-content:center;
+      }
+    }
 
     /* small helpers */
     .muted{color:var(--muted)}
@@ -286,43 +390,24 @@ I am always interested in meaningful collaborations, research partnerships, and 
         </div>
 
         <div style="margin-top:28px;text-align:center">
-          <h3>Get in touch</h3>
-
-          <!-- Contact form (Formspree) - replace YOUR_FORM_ID with your Formspree form ID -->
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact form" style="max-width:720px;margin:12px auto;text-align:left">
-            <label for="name">Name</label>
-            <input id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button class="btn" type="submit">Send message</button>
-            <p class="small" style="margin-top:8px">Or email: <span id="email-link">(loading...)</span></p>
-          </form>
-
-          <div style="margin-top:24px">
-            <p class="small"><strong>Quick Connect:</strong></p>
-            <div class="social-icons">
-              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <a href="https://github.com/00000281892" target="_blank" rel="noopener" class="social-icon" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="mailto:theawaisqureshi@gmail.com" class="social-icon" title="Email">
-                <i class="fas fa-envelope"></i>
-              </a>
-            </div>
+          <h3>Quick Connect</h3>
+          <div class="social-icons">
+            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/00000281892" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:theawaisqureshi@gmail.com" class="social-icon" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
           </div>
 
-          <p class="small" style="margin-top:16px">CV: <a href="/Awais_Qureshi_Applied_Scientist_CV.pdf" target="_blank" rel="noopener" download>
-            <i class="fas fa-download"></i> Download PDF
+          <p class="small" style="margin-top:24px"><a href="/Awais_Qureshi_Applied_Scientist_CV.pdf" target="_blank" rel="noopener" download>
+            <i class="fas fa-download"></i> Download CV
           </a></p>
         </div>
       </div>
@@ -332,34 +417,53 @@ I am always interested in meaningful collaborations, research partnerships, and 
 
   <footer>
     <div class="container">
-      <p>© 2026 Awais Qureshi — Applied AI Scientist. Designed for clarity, accessibility, and professional presentation.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About</h4>
+          <p>Applied AI Scientist specializing in Healthcare AI, Computational Biology, and Explainable Deep Learning.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Research</h4>
+          <div class="footer-links">
+            <a href="#research">Featured Research</a>
+            <a href="#publications">Publications</a>
+            <a href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/00000281892" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:theawaisqureshi@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p style="margin:0">© 2026 Awais Qureshi. All rights reserved.</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/00000281892" target="_blank" rel="noopener" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:theawaisqureshi@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Mailto obfuscation: assemble the email in JS to reduce scraping
-    (function(){
-      var user='theawaisqureshi';
-      var domain='gmail.com';
-      var email=user+'@'+domain;
-      var a=document.createElement('a');
-      a.href='mailto:'+email;
-      a.textContent=email;
-      a.rel='noopener';
-      document.getElementById('email-link').appendChild(a);
-    })();
-
-    // Formspree: if form ID not replaced, hide form and show mailto fallback note
-    (function(){
-      var form=document.getElementById('contact-form');
-      if(form && form.action.indexOf('YOUR_FORM_ID')!==-1){
-        // show a lightweight note
-        var note=document.createElement('p');
-        note.className='small muted';
-        note.textContent='To enable the contact form, replace YOUR_FORM_ID in the form action with your Formspree form ID (or sign up for Formspree and get an endpoint).';
-        form.parentNode.insertBefore(note, form.nextSibling);
-      }
-    })();
+    // No mailto obfuscation needed - removed
   </script>
 
 </body>
