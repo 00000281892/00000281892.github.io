@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Awais Qureshi — Applied AI Scientist. Researcher in healthcare AI, computational biology, longitudinal microbiome analysis, and explainable deep learning.">
   <title>Awais Qureshi | Applied AI Scientist</title>
+
+  <!-- Favicon and social preview -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content="Awais Qureshi — Applied AI Scientist">
+  <meta property="og:description" content="Applied AI Scientist focused on healthcare AI, computational biology, and longitudinal microbiome analysis.">
+  <meta property="og:image" content="/social-preview.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -54,9 +62,10 @@
     .btn{background:var(--accent);color:#07202a;padding:10px 18px;border-radius:999px;font-weight:700}
     .btn-outline{border:1.5px solid rgba(100,255,218,0.25);color:var(--accent);padding:10px 18px;border-radius:999px;background:transparent}
 
-    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:16px;align-items:center}
     .profile-card h3{margin:0 0 6px}
     .small{font-size:0.9rem;color:var(--muted)}
+    .headshot{width:96px;height:96px;border-radius:12px;flex-shrink:0;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,#12314a,#0b2332);display:block}
 
     section{padding:70px 0}
     .section-title{display:block;text-align:center;color:var(--accent);font-size:1.4rem;font-weight:700;margin-bottom:26px}
@@ -75,10 +84,13 @@
     .cards .card h3{margin-top:0}
 
     .pub-list{display:flex;flex-direction:column;gap:10px}
-    .pub-list a{display:inline-flex;gap:8px;align-items:center}
 
     .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    form label{font-size:0.9rem;color:var(--muted);display:block;margin-bottom:6px}
+    form button{margin-top:8px}
 
     /* small helpers */
     .muted{color:var(--muted)}
@@ -111,19 +123,22 @@
           <p>PhD Candidate at NUST-SEECS. I build trustworthy AI systems for healthcare and genomics research, with a focus on longitudinal microbiome analysis, explainability, and translating models into clinical impact.</p>
           <div class="cta">
             <a class="btn" href="#contact">Contact</a>
-            <a class="btn-outline" href="/Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn-outline" href="/Awais_Qureshi_Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download CV</a>
             <a class="btn-outline" href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="Profile summary">
-          <h3>Snapshot</h3>
-          <p class="small">14+ years in software engineering, AI research, and technical leadership. Research interests: longitudinal microbiome analytics, generative AI, LLMOps, and clinical decision support.</p>
-          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-          <div class="stats">
-            <div class="stat"><h3>514K+</h3><p class="small">Microbiome observations</p></div>
-            <div class="stat"><h3>1,871</h3><p class="small">Patients modeled</p></div>
-            <div class="stat"><h3>6</h3><p class="small">Research papers</p></div>
+          <img src="/headshot.svg" alt="Awais Qureshi headshot" class="headshot">
+          <div>
+            <h3>Snapshot</h3>
+            <p class="small">14+ years in software engineering, AI research, and technical leadership. Research interests: longitudinal microbiome analytics, generative AI, LLMOps, and clinical decision support.</p>
+            <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+            <div class="stats">
+              <div class="stat"><h3>514K+</h3><p class="small">Microbiome observations</p></div>
+              <div class="stat"><h3>1,871</h3><p class="small">Patients modeled</p></div>
+              <div class="stat"><h3>6</h3><p class="small">Research papers</p></div>
+            </div>
           </div>
         </aside>
       </div>
@@ -225,15 +240,30 @@
           <div class="card">
             <h3>ORCID</h3>
             <p class="small">Research identity and scholarly record</p>
-            <p style="margin-top:8px"><a href="#" target="_blank" rel="noopener">View ORCID</a></p>
+            <p style="margin-top:8px"><a href="https://orcid.org/0000-0001-7460-3099" target="_blank" rel="noopener">0000-0001-7460-3099</a></p>
           </div>
 
         </div>
 
         <div style="margin-top:28px;text-align:center">
           <h3>Get in touch</h3>
-          <p class="small">Email: <a href="mailto:theawaisqureshi@gmail.com">theawaisqureshi@gmail.com</a></p>
-          <p class="small">CV: <a href="/Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download PDF</a> — make sure the PDF is present at the repository root or update the link.</p>
+
+          <!-- Contact form (Formspree) - replace YOUR_FORM_ID with your Formspree form ID -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact form" style="max-width:720px;margin:12px auto;text-align:left">
+            <label for="name">Name</label>
+            <input id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button class="btn" type="submit">Send message</button>
+            <p class="small" style="margin-top:8px">Or email: <span id="email-link">(loading...)</span></p>
+          </form>
+
+          <p class="small">CV: <a href="/Awais_Qureshi_Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download PDF</a></p>
         </div>
       </div>
     </section>
@@ -245,6 +275,32 @@
       <p>© 2026 Awais Qureshi — Applied AI Scientist. Designed for clarity, accessibility, and professional presentation.</p>
     </div>
   </footer>
+
+  <script>
+    // Mailto obfuscation: assemble the email in JS to reduce scraping
+    (function(){
+      var user='theawaisqureshi';
+      var domain='gmail.com';
+      var email=user+'@'+domain;
+      var a=document.createElement('a');
+      a.href='mailto:'+email;
+      a.textContent=email;
+      a.rel='noopener';
+      document.getElementById('email-link').appendChild(a);
+    })();
+
+    // Formspree: if form ID not replaced, hide form and show mailto fallback note
+    (function(){
+      var form=document.getElementById('contact-form');
+      if(form && form.action.indexOf('YOUR_FORM_ID')!==-1){
+        // show a lightweight note
+        var note=document.createElement('p');
+        note.className='small muted';
+        note.textContent='To enable the contact form, replace YOUR_FORM_ID in the form action with your Formspree form ID (or sign up for Formspree and get an endpoint).';
+        form.parentNode.insertBefore(note, form.nextSibling);
+      }
+    })();
+  </script>
 
 </body>
 
