@@ -74,7 +74,7 @@
     .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:16px}
     .profile-card h3{margin:0 0 6px}
     .small{font-size:0.9rem;color:var(--muted)}
-    .headshot{width:96px;height:96px;border-radius:12px;flex-shrink:0;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,#12314a,#0b2332);display:block}
+    .headshot{width:96px;height:96px;border-radius:12px;flex-shrink:0;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,#12314a,#0b2332);display:block;object-fit:cover}
 
     section{padding:70px 0}
     .section-title{display:block;text-align:center;color:var(--accent);font-size:1.4rem;font-weight:700;margin-bottom:26px}
@@ -105,9 +105,9 @@
     /* About Section Professional Design */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
     .about-image{display:flex;justify-content:center}
-    .profile-image{width:100%;max-width:380px;border-radius:16px;border:2px solid rgba(100,255,218,0.2);overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,0.3);transition:all 0.3s ease}
+    .profile-image{width:100%;max-width:380px;border-radius:16px;border:2px solid rgba(100,255,218,0.2);overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,0.3);transition:all 0.3s ease;background:#0f2740}
     .profile-image:hover{border-color:rgba(100,255,218,0.5);box-shadow:0 32px 64px rgba(100,255,218,0.15)}
-    .profile-image img{width:100%;height:auto;display:block}
+    .profile-image img{width:100%;height:auto;display:block;object-fit:cover}
 
     .about-content h2{font-size:1.8rem;color:#fff;margin:0 0 16px;font-weight:700}
     .about-content > p{color:var(--muted);margin-bottom:16px;line-height:1.8;font-size:1rem}
@@ -115,8 +115,8 @@
     .about-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0}
     .highlight-item{background:rgba(100,255,218,0.05);border-left:3px solid var(--accent);padding:16px;border-radius:8px;transition:all 0.3s ease}
     .highlight-item:hover{background:rgba(100,255,218,0.1);transform:translateX(4px)}
-    .highlight-item strong{color:var(--accent);font-weight:700}
-    .highlight-item p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+    .highlight-item strong{color:var(--accent);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .highlight-item p{margin:0;color:var(--muted);font-size:0.95rem}
 
     /* Services Section */
     .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -124,9 +124,9 @@
     .service-card::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:radial-gradient(circle, rgba(100,255,218,0.1) 0%, transparent 70%);border-radius:50%}
     .service-card:hover{transform:translateY(-8px);border-color:rgba(100,255,218,0.3);background:linear-gradient(135deg, rgba(100,255,218,0.12) 0%, rgba(100,255,218,0.04) 100%);box-shadow:0 20px 40px rgba(100,255,218,0.1)}
     .service-card-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:rgba(100,255,218,0.15);border-radius:10px;color:var(--accent);font-size:1.8rem;margin-bottom:16px}
-    .service-card h3{color:#fff;font-size:1.3rem;margin:0 0 12px;font-weight:700}
-    .service-card p{color:var(--muted);line-height:1.7;margin-bottom:12px}
-    .service-features{list-style:none;padding:0;margin:16px 0 0}
+    .service-card h3{color:#fff;font-size:1.3rem;margin:0 0 12px;font-weight:700;position:relative;z-index:1}
+    .service-card p{color:var(--muted);line-height:1.7;margin-bottom:12px;position:relative;z-index:1}
+    .service-features{list-style:none;padding:0;margin:16px 0 0;position:relative;z-index:1}
     .service-features li{color:var(--muted);font-size:0.95rem;padding:6px 0;display:flex;gap:8px}
     .service-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
 
@@ -284,7 +284,7 @@
         </div>
 
         <aside class="profile-card" aria-label="Profile summary">
-          <img src="/headshot.svg" alt="Awais Qureshi headshot" class="headshot">
+          <img src="/profile_photo.jpg" alt="Awais Qureshi headshot" class="headshot" onerror="this.src='/headshot.svg'">
           <div>
             <h3>Snapshot</h3>
             <p class="small">14+ years in software engineering, AI research, and technical leadership. Research interests: longitudinal microbiome analytics, generative AI, LLMOps, and clinical decision support.</p>
@@ -307,7 +307,7 @@
         <div class="about-grid">
           <div class="about-image">
             <div class="profile-image">
-              <img src="/profile_photo.jpg" alt="Awais Qureshi - Applied AI Scientist">
+              <img src="/profile_photo.jpg" alt="Awais Qureshi - Applied AI Scientist" onerror="this.src='/headshot.svg'">
             </div>
           </div>
 
@@ -482,7 +482,7 @@
         <div style="margin-top:28px;text-align:center">
           <h3>Quick Connect</h3>
           <div class="social-icons">
-            <a href="https://wa.me/+923348289446" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
+            <a href="https://wa.me/923348289446" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://github.com/00000281892" target="_blank" rel="noopener" class="social-icon" title="GitHub">
@@ -535,7 +535,7 @@
           <p style="margin:0">© 2026 Awais Qureshi. All rights reserved.</p>
         </div>
         <div class="footer-social">
-          <a href="https://wa.me/+923348289446" target="_blank" rel="noopener" title="WhatsApp">
+          <a href="https://wa.me/923348289446" target="_blank" rel="noopener" title="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
           <a href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener" title="LinkedIn">
