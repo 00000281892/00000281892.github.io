@@ -2,453 +2,249 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Awais Qureshi — Applied AI Scientist. Researcher in healthcare AI, computational biology, longitudinal microbiome analysis, and explainable deep learning.">
+  <title>Awais Qureshi | Applied AI Scientist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a192f;
+      --card:#0f2740;
+      --muted:#a6b2c9;
+      --accent:#64ffda;
+      --glass: rgba(255,255,255,0.04);
+    }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #071423 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
 
-<title>Awais Qureshi | Applied AI Scientist</title>
+    a{color:var(--accent); text-decoration:none}
+    a:focus{outline:2px dashed var(--accent); outline-offset:4px}
 
-300;400;600;700;800&display=swap" rel="stylesheet">
+    .container{width:90%;max-width:1100px;margin:0 auto;padding:40px 0}
 
-<style>
+    header{
+      position:sticky;top:0;background:linear-gradient(180deg, rgba(10,25,47,0.85), rgba(10,25,47,0.65));backdrop-filter: blur(6px);z-index:40;border-bottom:1px solid rgba(100,255,218,0.05);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:700;letter-spacing:0.2px}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+    nav a:hover, nav a:focus{background:var(--glass);color:var(--accent)}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    .hero{
+      min-height:72vh;display:flex;align-items:center;padding:60px 0
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center}
+    .intro h1{font-size:2.4rem;margin:0 0 8px;color:#fff}
+    .intro h2{color:var(--accent);margin:0 0 18px;font-size:1.05rem;font-weight:600}
+    .intro p{color:var(--muted);margin-bottom:20px}
 
-html{
-scroll-behavior:smooth;
-}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#07202a;padding:10px 18px;border-radius:999px;font-weight:700}
+    .btn-outline{border:1.5px solid rgba(100,255,218,0.25);color:var(--accent);padding:10px 18px;border-radius:999px;background:transparent}
 
-body{
-font-family:'Inter',sans-serif;
-background:#0a192f;
-color:white;
-line-height:1.7;
-}
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .profile-card h3{margin:0 0 6px}
+    .small{font-size:0.9rem;color:var(--muted)}
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
+    section{padding:70px 0}
+    .section-title{display:block;text-align:center;color:var(--accent);font-size:1.4rem;font-weight:700;margin-bottom:26px}
+    .card{background:var(--card);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:linear-gradient(135deg,#0a192f,#112240);
-padding:20px;
-}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
 
-.hero h1{
-font-size:4rem;
-font-weight:800;
-margin-bottom:15px;
-}
+    .stats{display:flex;gap:16px;flex-wrap:wrap}
+    .stat{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:18px;border-radius:10px;text-align:center}
+    .stat h3{color:var(--accent);margin:0;font-size:1.6rem}
+    .stat p{color:var(--muted);margin:6px 0 0}
 
-.hero h2{
-color:#64ffda;
-margin-bottom:20px;
-}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .cards .card h3{margin-top:0}
 
-.hero p{
-max-width:850px;
-margin:auto;
-font-size:1.15rem;
-}
+    .pub-list{display:flex;flex-direction:column;gap:10px}
+    .pub-list a{display:inline-flex;gap:8px;align-items:center}
 
-.btn{
-display:inline-block;
-background:#64ffda;
-color:#0a192f;
-padding:12px 28px;
-border-radius:30px;
-font-weight:700;
-text-decoration:none;
-margin-top:30px;
-margin-right:10px;
-}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
 
-.btn-outline{
-display:inline-block;
-border:2px solid #64ffda;
-color:#64ffda;
-padding:12px 28px;
-border-radius:30px;
-text-decoration:none;
-margin-top:30px;
-}
+    /* small helpers */
+    .muted{color:var(--muted)}
 
-section{
-padding:90px 0;
-}
-
-.section-title{
-font-size:2.5rem;
-text-align:center;
-margin-bottom:50px;
-color:#64ffda;
-}
-
-.card{
-background:#112240;
-padding:25px;
-border-radius:16px;
-transition:0.3s;
-border:1px solid rgba(100,255,218,.15);
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#64ffda;
-box-shadow:0 10px 25px rgba(100,255,218,.15);
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.stat{
-background:#112240;
-padding:30px;
-border-radius:16px;
-text-align:center;
-}
-
-.stat h3{
-font-size:2rem;
-color:#64ffda;
-margin-bottom:10px;
-}
-
-a{
-color:#64ffda;
-text-decoration:none;
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.contact-card{
-background:#112240;
-padding:25px;
-border-radius:16px;
-text-align:center;
-transition:.3s;
-}
-
-.contact-card:hover{
-transform:translateY(-8px);
-border:1px solid #64ffda;
-}
-
-.contact-card h3{
-margin-bottom:10px;
-color:#64ffda;
-}
-
-.contact-card a{
-display:inline-block;
-margin-top:10px;
-font-weight:600;
-}
-
-footer{
-background:#081221;
-padding:30px;
-text-align:center;
-margin-top:50px;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.5rem;
-}
-
-.hero h2{
-font-size:1.2rem;
-}
-
-}
-
-</style>
-
+  </style>
 </head>
 
 <body>
-
-<section class="hero">
-
-<div class="container">
-
-<h1>Awais Qureshi</h1>
-
-<h2>
-Applied AI Scientist | Healthcare AI | Computational Biology
-</h2>
-
-<p>
-Building trustworthy AI systems for healthcare, genomics,
-scientific discovery, and next-generation clinical decision support.
-Leveraging Deep Learning, Explainable AI, Longitudinal Microbiome Analysis,
-Generative AI, and LLMOps to transform research into real-world impact.
-</p>
-
-" class="btn">Let's Connect</a>
-.pdf" class="btn-outline">Download CV</a>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">About Me</h2>
-
-<div class="card">
-
-<p>
-I am a PhD Candidate at NUST-SEECS specializing in Deep Learning,
-Longitudinal Microbiome Analytics, Explainable AI, Computational Biology,
-Healthcare AI, and Generative AI.
-</p>
-
-<br>
-
-<p>
-With 14+ years of experience in Software Engineering,
-Technical Leadership, Artificial Intelligence, and Research,
-I bridge the gap between academic innovation and production-ready AI systems.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Research Impact</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h3>514K+</h3>
-<p>Microbiome Observations</p>
-</div>
-
-<div class="stat">
-<h3>1,871</h3>
-<p>Patients Modeled</p>
-</div>
-
-<div class="stat">
-<h3>412</h3>
-<p>Microbial Genera</p>
-</div>
-
-<div class="stat">
-<h3>6</h3>
-<p>Research Papers</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Featured Research</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>DynaBiome</h3>
-<p>
-Interpretable temporal deep-learning framework for longitudinal microbiome dysbiosis detection using LSTMs and Transformers.
-</p>
-</div>
-
-<div class="card">
-<h3>MetaResNet</h3>
-<p>
-Novel CNN architecture for disease classification using metagenomic colormap optimization.
-</p>
-</div>
-
-<div class="card">
-<h3>DynaBiomeX</h3>
-<p>
-Noise filtration framework for sparse longitudinal microbiome datasets using advanced deep-learning strategies.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Technical Expertise</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Artificial Intelligence</h3>
-<p>
-Machine Learning, Deep Learning, CNNs, LSTMs, Transformers, Explainable AI
-</p>
-</div>
-
-<div class="card">
-<h3>Generative AI</h3>
-<p>
-RAG, LangChain, AI Agents, Bedrock, Prompt Engineering, LLMOps
-</p>
-</div>
-
-<div class="card">
-<h3>Computational Biology</h3>
-<p>
-Microbiome Analytics, Healthcare AI, Genomics, Longitudinal Data Science
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Publications</h2>
-
-<div class="card">
-
-<p>✅ DynaBiome — Published Journal Article</p>
-<br>
-
-<p>📝 MetaResNet — Under Review</p>
-
-<p>📝 DynaBiomeX — Under Review</p>
-
-<p>📝 ICDM 2026 — Under Review</p>
-
-<p>📝 ICoDT 2026 — Under Review</p>
-
-<p>📝 FiT 2026 — In Preparation</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Let's Connect</h2>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-<h3>💻 GitHub</h3>
-<p>Research repositories and open-source projects</p>
-ITHUB_USERNAME" target="_blank">
-Visit GitHub →
-</a>
-</div>
-
-<div class="contact-card">
-<h3>💼 LinkedIn</h3>
-<p>Professional profile and networking</p>
-linkedin.com/in/awaisqureshi-97150633" target="_blank">
-View LinkedIn →
-</a>
-</div>
-
-<div class="contact-card">
-<h3>📚 Google Scholar</h3>
-<p>Research publications and citations</p>
-<a href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank">
-Scholar Profile →
-</a>
-</div>
-
-<div class="contact-card">
-<h3>🆔 ORCID</h3>
-<p>Research identity and scholarly record</p>
--7460-3099" target="_blank">
-View ORCID →
-</a>
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:50px;">
-
-<h3>Contact Me</h3>
-
-<br>
-
-<p>
-📧
-<a href="mailto:theawaisqureshi@gmail.com">
-theawaisqureshi@gmail.com
-</a>
-</p>
-
-<br>
-
-Applied_Scientist_CV.pdf
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-© 2026 Awais Qureshi | Applied AI Scientist
-</p>
-
-</footer>
+  <header>
+    <div class="container nav">
+      <div class="brand">Awais Qureshi</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="intro">
+          <h1>Awais Qureshi</h1>
+          <h2>Applied AI Scientist — Healthcare AI · Computational Biology · Explainable Deep Learning</h2>
+          <p>PhD Candidate at NUST-SEECS. I build trustworthy AI systems for healthcare and genomics research, with a focus on longitudinal microbiome analysis, explainability, and translating models into clinical impact.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Contact</a>
+            <a class="btn-outline" href="/Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn-outline" href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile summary">
+          <h3>Snapshot</h3>
+          <p class="small">14+ years in software engineering, AI research, and technical leadership. Research interests: longitudinal microbiome analytics, generative AI, LLMOps, and clinical decision support.</p>
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+          <div class="stats">
+            <div class="stat"><h3>514K+</h3><p class="small">Microbiome observations</p></div>
+            <div class="stat"><h3>1,871</h3><p class="small">Patients modeled</p></div>
+            <div class="stat"><h3>6</h3><p class="small">Research papers</p></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <span class="section-title">About</span>
+        <div class="card">
+          <p>I am a PhD Candidate at NUST-SEECS focusing on applied machine learning for healthcare, computational biology, and longitudinal microbiome analysis. I combine rigorous research with production engineering to deploy reliable AI systems.</p>
+          <p style="margin-top:12px;color:var(--muted)">If you'd like a tailored CV or collaboration proposal, please reach out below.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <span class="section-title">Featured Research</span>
+        <div class="cards">
+          <article class="card">
+            <h3>DynaBiome</h3>
+            <p>Interpretable temporal deep-learning framework for longitudinal microbiome dysbiosis detection using LSTM and Transformer hybrids.</p>
+            <p class="small">Published — journal article. <a href="#publications">See publications</a></p>
+          </article>
+
+          <article class="card">
+            <h3>MetaResNet</h3>
+            <p>Novel CNN architecture for disease classification using metagenomic colormap optimization.</p>
+            <p class="small">Under review.</p>
+          </article>
+
+          <article class="card">
+            <h3>DynaBiomeX</h3>
+            <p>Noise filtration and imputation strategies for sparse longitudinal microbiome datasets using deep-learning techniques.</p>
+            <p class="small">In development.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <span class="section-title">Technical Expertise</span>
+        <div class="grid">
+          <div class="card">
+            <h3>Artificial Intelligence</h3>
+            <p class="small">Deep learning, Transformers, LSTMs, CNNs, model interpretability, causal inference for time series.</p>
+          </div>
+          <div class="card">
+            <h3>Generative & LLMs</h3>
+            <p class="small">RAG, LangChain, prompt engineering, LLMOps, retrieval pipelines and agents.</p>
+          </div>
+          <div class="card">
+            <h3>Computational Biology</h3>
+            <p class="small">Microbiome analytics, metagenomics, clinical data modeling, preprocessing and longitudinal analysis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <span class="section-title">Publications & Work</span>
+        <div class="card pub-list">
+          <a href="#">DynaBiome — Published (journal article)</a>
+          <a href="#">MetaResNet — Under review</a>
+          <a href="#">DynaBiomeX — Under review</a>
+          <a href="#">ICDM 2026 — Under review</a>
+          <a href="#">ICoDT 2026 — Under review</a>
+          <a href="#">FiT 2026 — In preparation</a>
+          <p class="small" style="margin-top:10px">If you need PDFs or DOI links added here, provide the links and I will include them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <span class="section-title">Contact & Profiles</span>
+        <div class="contact-grid">
+
+          <div class="card">
+            <h3>GitHub</h3>
+            <p class="small">Research repositories and open-source projects</p>
+            <p style="margin-top:8px"><a href="https://github.com/00000281892" target="_blank" rel="noopener">github.com/00000281892</a></p>
+          </div>
+
+          <div class="card">
+            <h3>LinkedIn</h3>
+            <p class="small">Professional profile and networking</p>
+            <p style="margin-top:8px"><a href="https://linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener">linkedin.com/in/awaisqureshi-97150633</a></p>
+          </div>
+
+          <div class="card">
+            <h3>Google Scholar</h3>
+            <p class="small">Research publications and citations</p>
+            <p style="margin-top:8px"><a href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank" rel="noopener">Scholar Profile</a></p>
+          </div>
+
+          <div class="card">
+            <h3>ORCID</h3>
+            <p class="small">Research identity and scholarly record</p>
+            <p style="margin-top:8px"><a href="#" target="_blank" rel="noopener">View ORCID</a></p>
+          </div>
+
+        </div>
+
+        <div style="margin-top:28px;text-align:center">
+          <h3>Get in touch</h3>
+          <p class="small">Email: <a href="mailto:theawaisqureshi@gmail.com">theawaisqureshi@gmail.com</a></p>
+          <p class="small">CV: <a href="/Applied_Scientist_CV.pdf" target="_blank" rel="noopener">Download PDF</a> — make sure the PDF is present at the repository root or update the link.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Awais Qureshi — Applied AI Scientist. Designed for clarity, accessibility, and professional presentation.</p>
+    </div>
+  </footer>
 
 </body>
 
