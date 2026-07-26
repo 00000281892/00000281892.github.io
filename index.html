@@ -123,6 +123,27 @@
     .stat h3{color:var(--accent);margin:0;font-size:1.6rem;font-weight:800;line-height:1.2}
     .stat p{color:var(--text-secondary);margin:6px 0 0;font-size:0.8rem;font-weight:600}
 
+    /* ABOUT SECTION - MISSION STATEMENT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:40px 0}
+    .mission-block{background:linear-gradient(135deg, rgba(0,217,255,0.08) 0%, rgba(0,217,255,0.02) 100%);padding:48px;border-radius:12px;border:1px solid var(--border);position:relative;overflow:hidden}
+    .mission-block::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%);border-radius:50%;pointer-events:none}
+    .mission-icon{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;background:linear-gradient(135deg, rgba(0,217,255,0.2) 0%, rgba(0,217,255,0.08) 100%);border-radius:12px;color:var(--accent);font-size:2.4rem;margin-bottom:20px;position:relative;z-index:1}
+    .mission-title{font-size:1.6rem;color:var(--text-primary);font-weight:800;margin:0 0 14px;position:relative;z-index:1}
+    .mission-text{color:var(--text-secondary);line-height:1.9;font-size:1.05rem;position:relative;z-index:1;margin:0}
+
+    .about-content h2{font-size:2.2rem;color:var(--text-primary);margin:0 0 24px;font-weight:800;letter-spacing:-0.5px}
+    .about-content > p{color:var(--text-secondary);margin-bottom:20px;line-height:1.9;font-size:1.05rem}
+
+    .about-highlights{display:grid;grid-template-columns:1fr;gap:18px;margin:40px 0}
+    .highlight-item{background:linear-gradient(135deg, rgba(0,217,255,0.07) 0%, rgba(0,217,255,0.02) 100%);border-left:4px solid var(--accent);padding:22px 24px;border-radius:8px;transition:all 0.3s ease;cursor:default}
+    .highlight-item:hover{background:linear-gradient(135deg, rgba(0,217,255,0.12) 0%, rgba(0,217,255,0.04) 100%);transform:translateX(6px);border-color:var(--accent-hover)}
+    .highlight-item strong{color:var(--accent);font-weight:800;display:flex;align-items:center;gap:12px;margin-bottom:8px;font-size:1.08rem}
+    .highlight-item p{margin:0;color:var(--text-secondary);font-size:0.98rem;line-height:1.6}
+
+    @media (max-width:1024px){
+      .about-grid{grid-template-columns:1fr;gap:40px}
+    }
+
     .pub-list{display:flex;flex-direction:column;gap:12px}
     .pub-list a{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:16px;background:rgba(0,217,255,0.04);border-radius:8px;transition:all 0.3s ease;border-left:4px solid transparent;color:var(--accent)}
     .pub-list a:hover{border-left-color:var(--accent);background:rgba(0,217,255,0.1);transform:translateX(4px)}
@@ -134,22 +155,6 @@
     .social-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg, rgba(0,217,255,0.15) 0%, rgba(0,217,255,0.05) 100%);border:1.5px solid var(--accent);color:var(--accent);transition:all 0.3s ease;cursor:pointer;font-size:1.3rem;text-decoration:none}
     .social-icon:hover{background:linear-gradient(135deg, rgba(0,217,255,0.25) 0%, rgba(0,217,255,0.1) 100%);transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,217,255,0.25);border-color:var(--accent-hover);color:var(--accent-hover)}
     .social-icon:active{transform:translateY(-2px)}
-
-    /* ABOUT SECTION */
-    .about-grid{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start;padding:40px 0}
-    .about-image{display:flex;justify-content:flex-start}
-    .profile-image{width:380px;border-radius:12px;border:3px solid var(--accent);overflow:hidden;box-shadow:0 24px 56px rgba(0,217,255,0.2);transition:all 0.3s ease;background:var(--card)}
-    .profile-image:hover{border-color:var(--accent-hover);box-shadow:0 32px 72px rgba(0,217,255,0.28);transform:translateY(-6px)}
-    .profile-image img{width:100%;height:auto;display:block;object-fit:cover}
-
-    .about-content h2{font-size:2.2rem;color:var(--text-primary);margin:0 0 24px;font-weight:800;letter-spacing:-0.5px}
-    .about-content > p{color:var(--text-secondary);margin-bottom:20px;line-height:1.9;font-size:1.05rem}
-
-    .about-highlights{display:grid;grid-template-columns:1fr;gap:18px;margin:40px 0}
-    .highlight-item{background:linear-gradient(135deg, rgba(0,217,255,0.07) 0%, rgba(0,217,255,0.02) 100%);border-left:4px solid var(--accent);padding:22px 24px;border-radius:8px;transition:all 0.3s ease;cursor:default}
-    .highlight-item:hover{background:linear-gradient(135deg, rgba(0,217,255,0.12) 0%, rgba(0,217,255,0.04) 100%);transform:translateX(6px);border-color:var(--accent-hover)}
-    .highlight-item strong{color:var(--accent);font-weight:800;display:flex;align-items:center;gap:12px;margin-bottom:8px;font-size:1.08rem}
-    .highlight-item p{margin:0;color:var(--text-secondary);font-size:0.98rem;line-height:1.6}
 
     /* FEATURED RESEARCH GRID */
     .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -173,16 +178,14 @@
     .service-features li::before{content:'→';color:var(--accent);font-weight:800;flex-shrink:0;font-size:1.1rem;margin-top:2px}
 
     @media (max-width:1024px){
-      .about-grid{grid-template-columns:1fr;gap:40px}
-      .about-image{justify-content:center}
-      .profile-image{width:100%;max-width:380px}
       .services-grid{grid-template-columns:1fr}
       .research-grid{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:768px){
       .research-grid{grid-template-columns:1fr}
-      .about-grid{padding:20px 0}
+      .mission-block{padding:32px}
+      .mission-icon{width:60px;height:60px;font-size:2rem}
     }
 
     /* BACK TO TOP BUTTON */
@@ -274,6 +277,39 @@
       gap:10px;
     }
 
+    .footer-author{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:16px;
+    }
+
+    .footer-author-photo{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:2px solid var(--accent);
+      object-fit:cover;
+      flex-shrink:0;
+    }
+
+    .footer-author-info{
+      flex:1;
+    }
+
+    .footer-author-info p{
+      margin:0;
+      color:var(--text-primary);
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    .footer-author-info .role{
+      color:var(--text-secondary);
+      font-size:0.85rem;
+      font-weight:500;
+    }
+
     .footer-bottom{
       display:flex;
       justify-content:space-between;
@@ -351,7 +387,7 @@
 
   <header>
     <div class="container nav">
-      <div class="brand">Awais Qureshi</div>
+      <div class="brand">AQ</div>
       <nav aria-label="Primary navigation">
         <ul>
           <li><a href="#about">About</a></li>
@@ -384,7 +420,7 @@
           </div>
         </div>
 
-        <aside class="profile-card" aria-label="Profile summary">
+        <aside class="profile-card" aria-label="Professional snapshot">
           <img src="/profile_photo.jpeg" alt="Awais Qureshi - Applied AI Scientist professional headshot" class="headshot" onerror="this.src='/headshot.svg'">
           <div>
             <h3>Professional Snapshot</h3>
@@ -396,15 +432,15 @@
               </div>
               <div class="stat">
                 <h3>1,871</h3>
-                <p class="small">Patients Modeling</p>
+                <p class="small">Patients</p>
               </div>
               <div class="stat">
-                <h3>05</h3>
-                <p class="small">Research Repositories</p>
+                <h3>5</h3>
+                <p class="small">Frameworks</p>
               </div>
               <div class="stat">
-                <h3>06</h3>
-                <p class="small">Research Publications</p>
+                <h3>6</h3>
+                <p class="small">Publications</p>
               </div>
             </div>
           </div>
@@ -418,10 +454,15 @@
         <h2 class="section-title">About Me</h2>
         
         <div class="about-grid">
-          <div class="about-image">
-            <div class="profile-image">
-              <img src="/profile_photo.jpeg" alt="Awais Qureshi - Applied AI Scientist and researcher">
+          <!-- MISSION STATEMENT -->
+          <div class="mission-block">
+            <div class="mission-icon">
+              <i class="fas fa-lightbulb"></i>
             </div>
+            <h3 class="mission-title">Research Vision</h3>
+            <p class="mission-text">
+              Developing scalable, interpretable AI solutions that advance clinical medicine, accelerate biomedical discovery, and create meaningful impact at the intersection of AI and healthcare.
+            </p>
           </div>
 
           <div class="about-content">
@@ -449,10 +490,6 @@
                 <p>514K+ microbiome observations analyzed, 1,871 patients modeled, 6+ peer-reviewed publications in top-tier journals</p>
               </div>
             </div>
-
-            <p style="margin-top:28px;color:var(--text-secondary)">
-              My vision is to develop scalable, interpretable AI solutions that advance clinical medicine, accelerate biomedical discovery, and create meaningful impact at the intersection of AI and healthcare.
-            </p>
           </div>
         </div>
       </div>
@@ -636,10 +673,18 @@
   <footer>
     <div class="container">
       <div class="footer-content">
+        <!-- Author Profile Card -->
         <div class="footer-section">
-          <h4>About</h4>
-          <p>Applied AI Scientist specializing in Healthcare AI, Computational Biology, and Explainable Deep Learning for clinical and research applications.</p>
+          <div class="footer-author">
+            <img src="/profile_photo.jpeg" alt="Awais Qureshi" class="footer-author-photo" onerror="this.src='/headshot.svg'">
+            <div class="footer-author-info">
+              <p>Awais Qureshi</p>
+              <p class="role">Applied AI Scientist</p>
+            </div>
+          </div>
+          <p>Developing interpretable AI solutions for clinical medicine and biomedical discovery.</p>
         </div>
+
         <div class="footer-section">
           <h4>Research</h4>
           <div class="footer-links">
