@@ -69,12 +69,19 @@
     .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
     .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .site-nav{display:flex;align-items:center}
+    .nav-panel{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;min-width:0}
+    .site-nav{display:flex;align-items:center;flex:1;min-width:0;justify-content:flex-end;overflow-x:auto}
     .site-nav ul{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:nowrap}
     .site-nav li{flex-shrink:0}
     .site-nav a{padding:12px 18px;border-radius:8px;font-weight:600;color:var(--text-secondary);font-size:0.95rem;transition:all 0.3s ease;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
     .site-nav a:hover{background:var(--glass);color:var(--accent)}
     .site-nav a:active{background:rgba(0,217,255,0.1);color:var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .nav-action{display:inline-flex;align-items:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);color:var(--text-secondary);font-weight:600;font-size:0.82rem;background:rgba(0,217,255,0.04);white-space:nowrap;transition:all 0.3s ease}
+    .nav-action:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,217,255,0.12)}
+
+    .section-toggle{display:none;width:100%;margin:0 0 16px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(0,217,255,0.06);color:var(--text-primary);font-weight:700;font-size:0.92rem;cursor:pointer;text-align:left}
+    .section-toggle i{margin-right:8px}
 
     /* HERO SECTION */
     .hero{
@@ -115,14 +122,21 @@
       .grid{grid-template-columns:repeat(2,1fr)}
       .grid-2{grid-template-columns:repeat(2,1fr)}
     }
+    @media (max-width:1200px){
+      .site-nav a{padding:10px 13px;font-size:0.88rem}
+      .nav-action{padding:9px 10px;font-size:0.78rem}
+    }
     @media (max-width:900px){
       .nav{flex-wrap:wrap}
       .nav-toggle{display:inline-flex}
-      .site-nav{display:none;width:100%;margin-top:12px;padding:12px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg, rgba(15,20,25,0.98), rgba(26,31,46,0.95));box-shadow:0 16px 40px rgba(0,0,0,0.28)}
-      .site-nav.is-open{display:block}
+      .nav-panel{display:none;width:100%;margin-top:12px;padding:12px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg, rgba(15,20,25,0.98), rgba(26,31,46,0.95));box-shadow:0 16px 40px rgba(0,0,0,0.28)}
+      .nav-panel.is-open{display:flex;flex-direction:column;align-items:stretch}
+      .site-nav{display:block;overflow:visible}
       .site-nav ul{flex-direction:column;align-items:stretch;gap:8px}
       .site-nav li{width:100%}
       .site-nav a{width:100%;justify-content:flex-start;padding:12px 14px;font-size:0.95rem}
+      .nav-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .nav-action{justify-content:center}
     }
     @media (max-width:768px){
       .grid{grid-template-columns:1fr}
@@ -130,6 +144,9 @@
       .intro h1{font-size:2.3rem}
       .cta{flex-direction:column}
       .btn, .btn-outline{width:100%;justify-content:center}
+      .section-toggle{display:block}
+      .section-body{display:block}
+      .section-body[hidden]{display:none}
     }
 
     .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;width:100%}
@@ -456,26 +473,33 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Awais Qureshi home">AQ</a>
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-panel">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research-interests">Research Interests</a></li>
-          <li><a href="#research">Research Projects</a></li>
-          <li><a href="#research-publications">Research Publications</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#expertise">Technical Expertise</a></li>
-          <li><a href="#academic-profiles">Academic Profiles</a></li>
-          <li><a href="#services">Professional Services</a></li>
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="nav-panel" id="nav-panel">
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research-interests">Research Interests</a></li>
+            <li><a href="#research">Research Projects</a></li>
+            <li><a href="#research-publications">Research Publications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#expertise">Technical Expertise</a></li>
+            <li><a href="#academic-profiles">Academic Profiles</a></li>
+            <li><a href="#services">Professional Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions" aria-label="Quick profile links">
+          <a class="nav-action" href="/Awais_Qureshi_Applied_Scientist_CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> CV</a>
+          <a class="nav-action" href="https://www.linkedin.com/in/awaisqureshi-97150633" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a class="nav-action" href="https://github.com/00000281892" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          <a class="nav-action" href="https://scholar.google.com/citations?user=HzfFC8kAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Scholar</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -596,7 +620,10 @@
       <div class="container">
         <h2 class="section-title">Professional Services</h2>
         <p class="section-subtitle">Expert consulting across AI architecture, research methodology, and biomedical innovation</p>
-
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="services-content" data-label="Professional Services">
+          <i class="fas fa-layer-group" aria-hidden="true"></i> Show Professional Services
+        </button>
+        <div class="section-body" id="services-content">
         <div class="services-grid">
           <!-- Software & GenAI Architecture -->
           <div class="service-card">
@@ -632,6 +659,7 @@
             </ul>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
@@ -640,6 +668,10 @@
       <div class="container">
         <h2 class="section-title">Featured Research</h2>
         <p class="section-subtitle">Innovative AI systems advancing healthcare and computational biology</p>
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="research-content" data-label="Research Projects">
+          <i class="fas fa-flask" aria-hidden="true"></i> Show Research Projects
+        </button>
+        <div class="section-body" id="research-content">
         <div class="research-grid">
           <article class="research-card">
             <h3>DynaBiome</h3>
@@ -665,6 +697,7 @@
             </span>
           </article>
         </div>
+        </div>
       </div>
     </section>
 
@@ -673,7 +706,10 @@
       <div class="container">
         <h2 class="section-title">Research Publications</h2>
         <p class="section-subtitle">Peer-reviewed publications and active submissions in biomedical AI</p>
-
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="publications-content" data-label="Publications">
+          <i class="fas fa-book-open-reader" aria-hidden="true"></i> Show Publications
+        </button>
+        <div class="section-body" id="publications-content">
         <div class="pub-grid">
           <article class="pub-card-modern" aria-label="DynaBiome publication card">
             <div class="pub-header">
@@ -719,6 +755,7 @@
               <a class="btn-outline" href="#" aria-label="Abstract for DynaBiomeX">Abstract</a>
             </div>
           </article>
+        </div>
         </div>
       </div>
     </section>
@@ -936,7 +973,16 @@
     // Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
     const navToggle = document.querySelector('.nav-toggle');
+    const navPanel = document.querySelector('#nav-panel');
     const siteNav = document.querySelector('.site-nav');
+    const sectionToggles = document.querySelectorAll('.section-toggle');
+
+    const setSectionToggleLabel = (toggle, expanded) => {
+      const label = toggle.getAttribute('data-label') || 'Section';
+      const iconClass = expanded ? 'fa-circle-minus' : 'fa-circle-plus';
+      const actionText = expanded ? 'Hide' : 'Show';
+      toggle.innerHTML = `<i class="fas ${iconClass}" aria-hidden="true"></i> ${actionText} ${label}`;
+    };
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
@@ -950,27 +996,79 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
-    if (navToggle && siteNav) {
+    if (navToggle && navPanel && siteNav) {
       navToggle.addEventListener('click', () => {
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        siteNav.classList.toggle('is-open', !isExpanded);
+        navPanel.classList.toggle('is-open', !isExpanded);
       });
 
       siteNav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
           navToggle.setAttribute('aria-expanded', 'false');
-          siteNav.classList.remove('is-open');
+          navPanel.classList.remove('is-open');
+        });
+      });
+      navPanel.querySelectorAll('.nav-actions a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navPanel.classList.remove('is-open');
         });
       });
 
       window.addEventListener('resize', () => {
         if (window.innerWidth > 900) {
           navToggle.setAttribute('aria-expanded', 'false');
-          siteNav.classList.remove('is-open');
+          navPanel.classList.remove('is-open');
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navPanel.classList.remove('is-open');
         }
       });
     }
+
+    const syncSectionVisibility = () => {
+      sectionToggles.forEach((toggle) => {
+        const targetId = toggle.getAttribute('aria-controls');
+        const sectionBody = targetId ? document.getElementById(targetId) : null;
+        if (!sectionBody) {
+          return;
+        }
+
+        const mobile = window.innerWidth <= 768;
+        if (!mobile) {
+          sectionBody.hidden = false;
+          toggle.setAttribute('aria-expanded', 'true');
+          setSectionToggleLabel(toggle, true);
+          return;
+        }
+
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        sectionBody.hidden = !expanded;
+        setSectionToggleLabel(toggle, expanded);
+      });
+    };
+
+    sectionToggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const targetId = toggle.getAttribute('aria-controls');
+        const sectionBody = targetId ? document.getElementById(targetId) : null;
+        if (!sectionBody) {
+          return;
+        }
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        sectionBody.hidden = expanded;
+        setSectionToggleLabel(toggle, !expanded);
+      });
+    });
+
+    syncSectionVisibility();
+    window.addEventListener('resize', syncSectionVisibility);
   </script>
 
 </body>
